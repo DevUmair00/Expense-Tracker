@@ -1,58 +1,62 @@
-############################
-# IntelliJ IDEA
-############################
+# IDE
 .idea/
-*.iml
-
-############################
-# VS Code
-############################
 .vscode/
+*.iml
+*.iws
+*.ipr
 
-############################
-# Spring Boot
-############################
+
+# Spring Boot / Maven
 **/target/
-
-############################
-# Maven
-############################
 .mvn/timing.properties
 
-############################
-# Logs
-############################
-*.log
 
-############################
+
 # React
-############################
 **/node_modules/
 **/dist/
 
-############################
-# Environment Variables
-############################
+
+# Build
+build/
+dist-ssr/
+
+
+# Environment
 .env
 .env.*
 !.env.example
+*.local
 
-############################
-# Operating System Files
-############################
-.DS_Store
-Thumbs.db
 
-############################
-# Temporary Files
-############################
-*.tmp
-*.swp
-
-############################
-# Package Managers
-############################
+# Logs
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.swp
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# NetBeans
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
