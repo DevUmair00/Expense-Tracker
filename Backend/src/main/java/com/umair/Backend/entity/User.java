@@ -1,6 +1,9 @@
 package com.umair.Backend.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,12 +25,17 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
+    @NotBlank(message = "Name is Required")
     @Column(name = "user_name" , nullable = false)
     private String name;
 
+    @NotBlank(message = "Email is Required")
+    @Email(message = "Please Enter a Valid Email")
     @Column(name = "user_email" , nullable = false , unique = true)
     private String email;
 
+    @NotBlank(message = "Password is Required")
+    @Size(min = 6 , message = "Password Must be at least 6 Character Long")
     @Column(name = "user_password" , nullable = false)
     private String password;
 
