@@ -5,6 +5,7 @@ import com.umair.Backend.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -54,4 +55,19 @@ public class TransactionService {
         return null;
     }
 
+    public List<Transaction> getTransactionsByUserId(Long userId)
+    {
+        return transactionRepo.findByUserId(userId);
+    }
+
+
+    public List<Transaction> getTransactionByCategoryId(Long categoryId){ return  transactionRepo.findByCategoryId(categoryId); }
+
+    public List<Transaction> getTransactionByType(String type){ return transactionRepo.findByType(type); }
+
+    public List<Transaction> getTransactionByUserIdAndType(Long userId, String type ){ return transactionRepo.findByUserIdAndType(userId , type);  }
+
+    public List<Transaction> getTransactionByTitleContaining(String word){ return transactionRepo.findByTitleContaining(word);  }
+
+    public List<Transaction> getTransactionByAmountGreaterThan(BigDecimal amount){ return  transactionRepo.findByAmountGreaterThan(amount); }
 }

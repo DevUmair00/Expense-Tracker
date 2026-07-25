@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -45,4 +46,43 @@ public class TransactionController {
     {
         return transactionService.updateTransaction(id , transaction);
     }
+
+    @GetMapping("/user/{userId}")
+    public List<Transaction> getTransactionsByUserId(@PathVariable Long userId)
+    {
+        return transactionService.getTransactionsByUserId(userId);
+    }
+
+
+    @GetMapping("/category/{categoryId}")
+    public List<Transaction> getTransactionByCategoryId(@PathVariable Long categoryId)
+    {
+        return  transactionService.getTransactionByCategoryId(categoryId);
+    }
+
+    @GetMapping("/type/{type}")
+    public List<Transaction> getTransactionByType(@PathVariable String type)
+    {
+        return transactionService.getTransactionByType(type);
+    }
+
+    @GetMapping("/user/{userId}/type/{type}")
+    public List<Transaction> getByUserIdAndType(@PathVariable Long userId, @PathVariable String type )
+    {
+        return transactionService.getTransactionByUserIdAndType(userId , type);
+    }
+
+    @GetMapping("/search/{word}")
+    public List<Transaction> getTransactionByTitleContaining(@PathVariable String word)
+    {
+        return transactionService.getTransactionByTitleContaining(word);
+    }
+
+    @GetMapping("/amount/{amount}")
+    public List<Transaction> getTransactionByAmountGreaterThan(@PathVariable BigDecimal amount)
+    {
+        return  transactionService.getTransactionByAmountGreaterThan(amount);
+    }
+
+
 }
