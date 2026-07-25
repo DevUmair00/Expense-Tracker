@@ -15,6 +15,11 @@ public class UserService {
 
     public User createUser(User user)
     {
+        if(userRepo.existsByEmail(user.getEmail()))
+        {
+            throw new RuntimeException("Email already exists");
+        }
+
         return userRepo.save(user);
     }
 
@@ -50,9 +55,14 @@ public class UserService {
     }
 
 
-    public User getUserByEmail(String email)
+    public User getUserByEmail(String email) {
+
+            return userRepo.findByEmail(email);
+    }
+
+    public List<User> getUserByNameContaining(String name)
     {
-        return userRepo.findByEmail(email);
+            return userRepo.findByNameContaining(name);
     }
 
 }

@@ -33,10 +33,30 @@ public class CategoryService {
         return  null;
     }
 
-    public Category getCategoryById(Long id){ return categoryRepo.findById(id).orElse(null);}
+    public Category getCategoryById(Long id)
+    {
+        return categoryRepo.findById(id).orElse(null);
+    }
 
     public List<Category> getAllCategories()
     {
         return categoryRepo.findAll();
+
     }
+
+    public List<Category> getCategoriesByUserId(Long userId)
+    {
+        return categoryRepo.findByUserId(userId);
+    }
+
+    public Category getCategoryByName(String name)
+    {
+        return categoryRepo.findByName(name);
+    }
+
+    public List<Category> searchCategory(String name)
+    {
+        return categoryRepo.findByNameContaining(name);
+    }
+
 }

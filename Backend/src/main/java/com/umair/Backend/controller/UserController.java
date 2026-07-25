@@ -52,4 +52,11 @@ public class UserController {
     {
         return userService.getUserByEmail(email);
     }
+
+    @GetMapping("/search/{name}")
+    public List<User> getUserByNameContaining(@PathVariable String name)
+    {
+        return userService.getUserByNameContaining(name);
+    }
+
 }

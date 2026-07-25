@@ -45,4 +45,23 @@ public class CategoryController {
     {
         return categoryService.getAllCategories();
     }
+
+
+    @GetMapping("/user/{userId}")
+    public List<Category> getCategoriesByUserId(@PathVariable Long userId)
+    {
+        return categoryService.getCategoriesByUserId(userId);
+    }
+
+    @GetMapping("/name/{name}")
+    public Category getCategoryByName(@PathVariable String name)
+    {
+        return categoryService.getCategoryByName(name);
+    }
+
+    @GetMapping("/search")
+    public List<Category> searchCategory(@RequestParam String name)
+    {
+        return categoryService.searchCategory(name);
+    }
 }
