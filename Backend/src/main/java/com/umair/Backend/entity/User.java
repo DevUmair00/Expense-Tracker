@@ -1,5 +1,6 @@
 package com.umair.Backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -43,9 +44,11 @@ public class User {
     @Column(name = "user_created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Category> categories;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Transaction> transactions;
 }
