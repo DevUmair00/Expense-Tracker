@@ -1,6 +1,7 @@
 package com.umair.Backend.service;
 
 import com.umair.Backend.entity.Transaction;
+import com.umair.Backend.exception.ResourceNotFoundException;
 import com.umair.Backend.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,12 +17,18 @@ public class TransactionService {
 
     public Transaction createTransaction(Transaction transaction)
     {
+
         return transactionRepo.save(transaction);
     }
 
     public  Transaction getTransactionById(Long id)
     {
-        return transactionRepo.findById(id).orElse(null);
+
+        return transactionRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException(
+                        "Transaction Not found with id " + id
+                )
+        );
     }
 
     public List<Transaction> getAllTransaction()
@@ -31,15 +38,23 @@ public class TransactionService {
 
     public void deleteTransaction(Long id)
     {
-        transactionRepo.deleteById(id);
+        Transaction transaction = transactionRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException(
+                        "Transaction not found with id : " + id
+                )
+        );
+        transactionRepo.delete(transaction);
     }
 
     public Transaction updateTransaction(Long id , Transaction transaction)
     {
-        Transaction temp = transactionRepo.findById(id).orElse(null);
+        Transaction temp = transactionRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException(
+                        "Transaction Not found with id " + id
+                )
+        );
 
-        if (temp != null)
-        {
+
             temp.setTitle(transaction.getTitle());
             temp.setAmount(transaction.getAmount());
             temp.setDate(transaction.getDate());
@@ -50,13 +65,12 @@ public class TransactionService {
             temp.setCategory(transaction.getCategory());
 
             return transactionRepo.save(temp);
-        }
 
-        return null;
     }
 
     public List<Transaction> getTransactionsByUserId(Long userId)
     {
+
         return transactionRepo.findByUserId(userId);
     }
 

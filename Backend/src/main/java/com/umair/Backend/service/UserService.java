@@ -1,6 +1,7 @@
 package com.umair.Backend.service;
 
 import com.umair.Backend.entity.User;
+import com.umair.Backend.exception.ResourceNotFoundException;
 import com.umair.Backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,28 +26,39 @@ public class UserService {
 
     public void deleteUser(Long id)
     {
-        userRepo.deleteById(id);
+        User user = userRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException(
+                        "User not found with id " + id
+                )
+        );
+
+        userRepo.delete(user);
     }
 
     public User updateUser(Long id , User user)
     {
-        User temp = userRepo.findById(id).orElse(null);
 
-        if(temp != null)
-        {
-            temp.setName(user.getName());
-            temp.setEmail(user.getEmail());
-            temp.setPassword(user.getPassword());
+        User temp = userRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException(
+                        "User Not found with id " + id
+                )
+        );
 
-            return userRepo.save(temp);
-        }
+        temp.setName(user.getName());
+        temp.setEmail(user.getEmail());
+        temp.setPassword(user.getPassword());
 
-        return null;
+        return userRepo.save(temp);
     }
 
     public User getUserById(Long id)
     {
-        return userRepo.findById(id).orElse(null);
+        return userRepo.findById(id)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "user Not Found with id : " + id
+                        )
+                );
     }
 
     public List<User> getAllUsers()

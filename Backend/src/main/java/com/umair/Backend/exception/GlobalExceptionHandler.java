@@ -33,4 +33,20 @@ public class GlobalExceptionHandler {
 
         return response;
     }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public Map<String , Object> handleResourceNotFoundException (ResourceNotFoundException ex)
+    {
+        Map<String , Object> response = new HashMap<>();
+
+        response.put(
+                "status" , HttpStatus.NOT_FOUND.value()
+        );
+
+        response.put(
+                "message" , ex.getMessage()
+        );
+
+        return response;
+    }
 }
