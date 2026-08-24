@@ -1,4 +1,5 @@
 import Card from "./Card";
+import { Wallet , TrendingUp , TrendingDown , PiggyBank } from "lucide-react";
 
 const SummaryCards = () => {
   const cards = [
@@ -6,25 +7,25 @@ const SummaryCards = () => {
       title: "Total Balance",
       value: "$24,250",
       change: "12.5%",
-      icon: "MdAccountBalanceWallet",
+      icon: Wallet,
     },
     {
       title: "Total Income",
       value: "$48,750",
       change: "8.3%",
-      icon: "MdAccountBalanceWallet",
+      icon: TrendingUp,
     },
     {
       title: "Total Expense",
       value: "$20,750",
       change: "8.3%",
-      icon: "MdAccountBalanceWallet",
+      icon: TrendingDown,
     },
     {
       title: "Monthly Saving",
       value: "$4,00",
       change: "8.3%",
-      icon: "MdAccountBalanceWallet",
+      icon: PiggyBank,
     },
   ];
 

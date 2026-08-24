@@ -1,4 +1,4 @@
-import { Header } from "../components/dashboard/Header"
+import Header  from "../components/dashboard/Header"
 import SummaryCards from "../components/dashboard/SummaryCards"
 import AnalyticsGrid from "../components/dashboard/AnalyticsGrid"
 
