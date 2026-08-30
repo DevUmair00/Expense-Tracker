@@ -3,7 +3,7 @@ import { ChartPie } from "lucide-react";
 
 const Sidebar = () => {
   return (
-    <aside className="fixed left-0 top-0 border-r-2 border-black/20 min-h-dvh min-w-[15rem]">
+    <aside className="fixed left-0 top-0 border-r-2 border-black/20 min-h-dvh min-w-60">
   
       {/* Logo */}
       <div className="flex items-center max-h-16 gap-2 border-y-2 border-black/20 pl-2 p-4">

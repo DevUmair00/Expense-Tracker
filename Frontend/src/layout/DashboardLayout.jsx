@@ -4,7 +4,7 @@ import AnalyticsGrid from '../components/dashboard/AnalyticsGrid';
 
 const DashboardLayout = () => {
   return (
-    <div className='ml-[15rem] px-4'>
+    <div className='ml-60 px-4'>
       <Header />
       <SummaryCards />
       <AnalyticsGrid />

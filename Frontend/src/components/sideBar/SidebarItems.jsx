@@ -1,7 +1,7 @@
 import {
   House,
   FileText,
-  Tags,
+  Blocks,
   ChartNoAxesCombined,
   Settings,
   LogOut,
@@ -25,7 +25,7 @@ const SidebarItems = () => {
     {
       title: "Categories",
       path: "/categories",
-      icon: Tags,
+      icon: Blocks,
     },
     {
       title: "Reports",
