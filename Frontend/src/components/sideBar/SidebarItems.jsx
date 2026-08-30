@@ -1,11 +1,12 @@
 import {
-  LayoutDashboard,
-  Receipt,
+  House,
+  FileText,
   Tags,
   ChartNoAxesCombined,
   Settings,
   LogOut,
 } from "lucide-react";
+
 
 import Item from "./Item";
 
@@ -14,12 +15,12 @@ const SidebarItems = () => {
     {
       title: "Dashboard",
       path: "/dashboard",
-      icon: LayoutDashboard,
+      icon: House,
     },
     {
       title: "Transactions",
       path: "/transactions",
-      icon: Receipt,
+      icon: FileText,
     },
     {
       title: "Categories",
@@ -44,7 +45,7 @@ const SidebarItems = () => {
   ];
 
   return (
-    <div className="pt-10 px-6">
+    <div className="pt-4 py-4">
       {links.map((link) => (
         <Item
           key={link.path}
@@ -58,3 +59,7 @@ const SidebarItems = () => {
 };
 
 export default SidebarItems;
+
+
+
+
