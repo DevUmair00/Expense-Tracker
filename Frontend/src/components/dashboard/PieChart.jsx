@@ -1,7 +1,24 @@
+import {Pie} from "react-chartjs-2";
+import {PieChartData} from "./PieChartData"
+import {chartOptions} from "./PieChartData"
+
+import {
+  Chart as ChartJS , 
+  Tooltip , 
+  Legend , 
+  ArcElement
+} from "chart.js";
+
+ChartJS.register(
+  Tooltip , 
+  Legend , 
+  ArcElement,
+);
 
 const PieChart = () => {
+
   return (
-    <div>PieChart</div>
+      <Pie options={chartOptions} data={PieChartData} />
   )
 }
 
