@@ -3,7 +3,7 @@ const Card = (props) => {
   const Icon = props.icon;
 
   return (
-    <div className="border border-black/60 rounded-xl grid grid-cols-[2fr_1fr] gap-2 p-4 pr-6">
+    <div className="border-2 border-black/20 bg-white rounded-xl grid grid-cols-[2fr_1fr] gap-2 p-4 pr-6">
       <div className="">
         <h2 className="font-medium text-black/50">{props.title}</h2>
         <span className="text-black font-bold text-2xl">{props.value}</span>

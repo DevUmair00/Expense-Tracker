@@ -4,10 +4,10 @@ import Navbar from "../layout/Navbar";
 
 const Dashboard = () => {
   return (
-    <div className="">
+    <div className="mb-20">
       <Sidebar />
       <Navbar />
-      <DashboardLayout />      
+      <DashboardLayout />    
     </div>
   );
 };
