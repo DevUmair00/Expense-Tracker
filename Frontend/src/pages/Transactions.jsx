@@ -1,10 +1,14 @@
-import Header from "../components/transactions/TransactionsHeader";
+import Sidebar from "../layout/Sidebar";
+import Navbar from "../layout/Navbar";
+import TransactionLayout from "../layout/TransactionLayout";
 
 
 const Transactions = () => {
   return (
     <div>
-      <Header />
+      <Sidebar />
+      <Navbar />
+      <TransactionLayout />
     </div>
   )
 }
