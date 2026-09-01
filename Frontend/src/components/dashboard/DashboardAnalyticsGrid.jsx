@@ -1,8 +1,8 @@
-import LineChart from "./LineChart";
-import PieChart from "./PieChart";
+import LineChart from "./DashboardLineChart";
+import PieChart from "./DashboardPieChart";
 
 
-const AnalyticsGrid = () => {
+const DashboardAnalyticsGrid = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-8">
       
@@ -30,4 +30,4 @@ const AnalyticsGrid = () => {
   );
 };
 
-export default AnalyticsGrid;
+export default DashboardAnalyticsGrid;

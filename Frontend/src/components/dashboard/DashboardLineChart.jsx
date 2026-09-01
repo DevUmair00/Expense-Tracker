@@ -24,11 +24,11 @@ ChartJS.register(
 );
 
 
-const LineChart = () => {
+const DashboardLineChart = () => {
   
   return (
       <Line options={chartOptions} data={LineChartData} />
   )
 }
 
-export default LineChart
+export default DashboardLineChart

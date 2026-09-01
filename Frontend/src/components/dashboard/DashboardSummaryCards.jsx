@@ -1,7 +1,7 @@
-import Card from "./Card";
+import Card from "./DashboardCard";
 import { Wallet , TrendingUp , TrendingDown , PiggyBank } from "lucide-react";
 
-const SummaryCards = () => {
+const DashboardSummaryCards = () => {
   const cards = [
     {
       title: "Total Balance",
@@ -44,6 +44,6 @@ const SummaryCards = () => {
   );
 };
 
-export default SummaryCards;
+export default DashboardSummaryCards;
 
 

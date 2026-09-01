@@ -1,6 +1,6 @@
-import Header from '../components/dashboard/Header';
-import SummaryCards from '../components/dashboard/SummaryCards';
-import AnalyticsGrid from '../components/dashboard/AnalyticsGrid';
+import Header from '../components/dashboard/DashboardHeader';
+import SummaryCards from '../components/dashboard/DashboardSummaryCards';
+import AnalyticsGrid from '../components/dashboard/DashboardAnalyticsGrid';
 
 const DashboardLayout = () => {
   return (

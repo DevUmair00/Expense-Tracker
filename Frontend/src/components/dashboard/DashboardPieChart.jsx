@@ -15,11 +15,11 @@ ChartJS.register(
   ArcElement,
 );
 
-const PieChart = () => {
+const DashboardPieChart = () => {
 
   return (
       <Pie options={chartOptions} data={PieChartData} />
   )
 }
 
-export default PieChart
+export default DashboardPieChart

@@ -1,4 +1,4 @@
-const Card = (props) => {
+const DashboardCard = (props) => {
 
   const Icon = props.icon;
 
@@ -14,6 +14,6 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default DashboardCard;
 
 
